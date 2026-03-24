@@ -1,0 +1,57 @@
+/**
+ * BOTTIGLIA - NATIVE BLE IMPLEMENTATION REFERENCE
+ * 
+ * This file contains the logic for a real React Native / Expo environment.
+ * To use this, you would need:
+ * 1. expo-ble-advertiser (for advertising)
+ * 2. react-native-ble-plx (for scanning)
+ * 3. Configured AndroidManifest.xml and Info.plist
+ */
+
+/*
+// --- ANDROID PERMISSIONS (AndroidManifest.xml) ---
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+<uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+// --- IOS PERMISSIONS (Info.plist) ---
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>Bottiglia usa il Bluetooth per inviare e ricevere messaggi dai dispositivi vicini.</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>Bottiglia usa il Bluetooth per inviare e ricevere messaggi dai dispositivi vicini.</string>
+*/
+
+/*
+import { BleManager } from 'react-native-ble-plx';
+import BLEAdvertiser from 'react-native-ble-advertiser';
+
+const SERVICE_UUID = "BA77-LE00-0000-0000-0000-000000000000";
+
+// 1. TRANSMITTING (Android Only for custom data)
+const startBroadcasting = async (message: string) => {
+  // Encode message to hex (BLE advertising usually takes hex/bytes)
+  const hexMessage = Buffer.from(message, 'utf8').toString('hex');
+  
+  BLEAdvertiser.setCompanyId(0x00FF); // Custom/Dummy Company ID
+  await BLEAdvertiser.broadcast(SERVICE_UUID, [0x01, 0x02], {
+    includeDeviceName: false,
+    manufacturerData: hexMessage // Note: Max size is limited (~20-31 bytes total for adv packet)
+  });
+};
+
+// 2. RECEIVING
+const startScanning = (onMessageReceived: (msg: string) => void) => {
+  const manager = new BleManager();
+  
+  manager.startDeviceScan([SERVICE_UUID], null, (error, device) => {
+    if (error) return;
+    
+    if (device && device.manufacturerData) {
+      const decoded = Buffer.from(device.manufacturerData, 'base64').toString('utf8');
+      onMessageReceived(decoded);
+    }
+  });
+};
+*/

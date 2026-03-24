@@ -1,0 +1,5 @@
+{
+  "name": "Bottiglia",
+  "description": "Un'app poetica per trasmettere messaggi anonimi via Bluetooth Low Energy (BLE) a chiunque sia nelle vicinanze.",
+  "requestFramePermissions": ["bluetooth"]
+}

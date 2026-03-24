@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-ocean-dark: #05070a;
+  --color-ocean-deep: #0a0f1a;
+  --color-sea-foam: #e0f2f1;
+}
+
+@layer base {
+  body {
+    @apply bg-ocean-dark text-sea-foam antialiased overflow-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.pulse-animation {
+  animation: pulse-ring 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
