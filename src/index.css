@@ -4,14 +4,22 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
   
-  --color-ocean-dark: #05070a;
-  --color-ocean-deep: #0a0f1a;
-  --color-sea-foam: #e0f2f1;
+  --color-app-bg: #05070a;
+  --color-app-ink: #e0f2f1;
+  --color-app-ink-muted: rgba(224, 242, 241, 0.6);
+  --color-app-ink-faint: rgba(224, 242, 241, 0.2);
+}
+
+.theme-dawn {
+  --color-app-bg: #fff7ed;
+  --color-app-ink: #431407;
+  --color-app-ink-muted: rgba(67, 20, 7, 0.6);
+  --color-app-ink-faint: rgba(67, 20, 7, 0.15);
 }
 
 @layer base {
   body {
-    @apply bg-ocean-dark text-sea-foam antialiased overflow-hidden;
+    @apply bg-app-bg text-app-ink antialiased overflow-hidden transition-colors duration-700;
     font-family: var(--font-sans);
   }
 }

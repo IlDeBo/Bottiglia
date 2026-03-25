@@ -1,5 +1,5 @@
 {
-  "name": "Bottiglia",
-  "description": "Un'app poetica per trasmettere messaggi anonimi via Bluetooth Low Energy (BLE) a chiunque sia nelle vicinanze.",
+  "name": "Fluendo",
+  "description": "Un'esperienza di messaggistica effimera e locale basata sul fluire dei segnali BLE. Senza server, senza tracce, solo messaggi che arrivano e se ne vanno come la marea.",
   "requestFramePermissions": ["bluetooth"]
 }
